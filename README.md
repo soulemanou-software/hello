@@ -23,7 +23,7 @@ To get a local copy up and running;
 clone this repository on your desired folder.
 
 ```
-git clone https://github.com/kessio/blog-app.git
+git clone
 ```
 
 ### Install
