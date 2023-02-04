@@ -1,31 +1,3 @@
-<a name="readme-top"></a>
-
-<!--
-HOW TO USE:
-This is an example of how you may give instructions on setting up your project locally.
-
-Modify this file to match your project and remove sections that don't apply.
-
-REQUIRED SECTIONS:
-- Table of Contents
-- About the Project
-  - Built With
-  - Live Demo
-- Getting Started
-- Authors
-- Future Features
-- Contributing
-- Show your support
-- Acknowledgements
-- License
-
-After you're finished please remove all the comments and instructions!
--->
-
-</div>
-
-<!-- TABLE OF CONTENTS -->
-
 # 📗 Table of Contents
 
 - [📖 About the Project](#about-project)
@@ -45,18 +17,34 @@ After you're finished please remove all the comments and instructions!
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
-- [❓ FAQ](#faq)
+- [❓ FAQ (OPTIONAL)](#faq)
 - [📝 License](#license)
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Rails Blog <a name="about-project"></a>
+# 📖 Blog App <a name="about-project"></a>
 
-> The Blog app is a classic example of a blog website. I create a fully functional website that will show the list of posts and empower readers to interact with them by adding comments and liking posts.
+> The Blog app will be a classic example of a blog website. It will be a fully functional website that will show the list of posts and empower readers to interact with them by adding comments and liking posts.
 
-[Rails Blog App] is a web application that allows users post and comment on post made by other users.
+**Blog App** is a classic example of a blog website. It is fully functional website that will show the list of posts and empower readers to interact with them by adding comments and liking posts.
 
 ## 🛠 Built With <a name="built-with"></a>
+
+### Tech Stack <a name="tech-stack"></a>
+
+<details>
+  <summary>Client</summary>
+  <ul>
+    <li><a href="https://rubyonrails.org/">Rails</a></li>
+  </ul>
+</details>
+
+<details>
+  <summary>Server</summary>
+  <ul>
+    <li><a href="https://www.ruby-lang.org/en/">Ruby</a></li>
+  </ul>
+</details>
 
 <details>
 <summary>Database</summary>
@@ -69,15 +57,18 @@ After you're finished please remove all the comments and instructions!
 
 ### Key Features <a name="key-features"></a>
 
-- *[User accounts]*
-- *[Post articles]*
-- *[Like and comment on articles]*
+- **Login Functionality**
+- **Post an article**
+- **Like a post**
+- **Comment a post**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LIVE DEMO -->
 
 ## 🚀 Live Demo <a name="live-demo"></a>
+
+> Add a link to your deployed project.
 
 - [Live Demo Link](https://yourdeployedapplicationlink.com)
 
@@ -93,31 +84,51 @@ To get a local copy up and running, follow these steps.
 
 In order to run this project you need:
 
-- Ruby
-- Rails
-- PostgrSQL
+
+```sh
+ gem install rails
+```
+
 
 ### Setup
 
 Clone this repository to your desired folder:
 
-`cd my-folder`
-
-  - clone the repo using `git clone https://github.com/omarbabou/rails-blog.git`
-  - Change directory `cd rails-blog`
-
+```sh
+  cd my-folder
+git clone https://github.com/kessio/blog-app.git
+```
 
 ### Install
 
 Install this project with:
 
- ` gem install`
+```sh
+  cd my-project
+  gem install
+```
 
 ### Usage
 
 To run the project, execute the following command:
 
-  `rails server`
+
+```sh
+  rails server
+```
+
+### Run tests
+
+To run tests, run the following command:
+
+```sh
+  bin/rails test test/models/article_test.rb
+```
+
+
+### Deployment
+
+You can deploy this project using:
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -126,11 +137,13 @@ To run the project, execute the following command:
 
 ## 👥 Authors <a name="authors"></a>
 
-👤 *Author1*
+> Mention all of the collaborators of this project.
 
-- GitHub: [soulemanou-software](https://github.com/soulemanou-software)
-- LinkedIn: [soulemanou kunchiefuh babanou](https://www.linkedin.com/in/soulemanou-kunchiefuh-babanou/)
-- twitter: [babanou237](https://twitter.com/Babanou237)
+👤 **Author1**
+
+- GitHub: [@kessio](https://github.com/kessio)
+- Twitter: [@kessio_sharon](https://twitter.com/kessio_sharon)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/sharon-kessio-172220b5)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -140,8 +153,9 @@ To run the project, execute the following command:
 
 > Describe 1 - 3 features you will add to the project.
 
-- [Views]
-- [Login page]
+- [ ] **User Authentication**
+- [ ] **Design User Interface**
+- [ ] **CRUD Operations**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -161,23 +175,45 @@ Feel free to check the [issues page](../../issues/).
 
 > Write a message to encourage readers to support your project
 
+If you like this project...
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- ACKNOWLEDEMENTS -->
+<!-- ACKNOWLEDGEMENTS -->
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
 > Give credit to everyone who inspired your codebase.
 
+I would like to thank...
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- FAQ (optional) -->
+
+## ❓ FAQ (OPTIONAL) <a name="faq"></a>
+
+> Add at least 2 questions new developers would ask when they decide to use your project.
+
+- **What is the difference between using rake and rails?**
+
+  - Rails core team decided to have consistency by enabling rails command to support everything that rake does.
+
+For example in Rails 5 commands like db:migrate, db:setup, db:test etc which are part of rake command in Rails 4 are now being supported by rails command. However you can still choose to use rake to run those commands similar to how they were run in Rails 4. This is because Rails community has introduced Rake Proxy instead of completely moving the command options from rake to rails.
+
+What happens internally is that when rails db:migrate command is executed, Rails checks if db:migrate is something that rails natively supports or not. In this case db:migrate is not natively supported by rails, so Rails delegates the execution to Rake via Rake Proxy.
+
+If you want to see all the commands that is supported by rails in Rails 5 then you can get a long list of options by executing rails --help.
+
+- **What's new in Rails version 7**
+- This article explain what's new with [Ruby on rail version 7](https://www.solutelabs.com/blog/ruby-on-rails-7)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LICENSE -->
 
 ## 📝 License <a name="license"></a>
 
 This project is [MIT](./LICENSE) licensed.
-
-NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
