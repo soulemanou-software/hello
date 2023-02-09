@@ -219,6 +219,6 @@ If you want to see all the commands that is supported by rails in Rails 5 then y
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](./LICENSE) licensed.
+This project is [MIT](./MIT.md) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
