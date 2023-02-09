@@ -145,6 +145,7 @@ You can deploy this project using:
 - Twitter: [@soulemanou-software](https://twitter.com/soulemanou-software)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/soulemanou-software)
 
+**Author2**
 **Emem Ekpo**
 
 - GitHub: [@ecekpo](https://https://github.com/ecekpo)
