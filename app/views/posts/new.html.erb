@@ -1,6 +1,10 @@
-<h2 class="text-center p-3 mb-2">create a new Post</h2>
-<%= form_with model: @post, url: user_posts_path, class:"d-flex flex-column align-items-center p-3",method: :post do |form| %>
-  <%= form.text_field :title, placeholder: 'Title', class:"input p-3 rounded" %><br><br>
-  <%= form.text_area :text, placeholder: 'Text', class:"input p-3 rounded" %><br><br>
-  <%= form.submit 'Create post', class:"btn btn-outline-dark"%>
-<% end %>
+<div>
+<h1>Add new post</h1>
+<%= form_with model: @post, url: user_posts_path do |form|%>
+<div>
+<%= form.text_field :title, placeholder:"Enter post title", class:"form-control w-25 "%>
+<%= form.text_field :text, placeholder:"Enter text", class:"form-control w-25"%>
+<%= form.submit "Add Post", class:"btn btn-primary w-25", data:{turbo:false}%>
+</div>
+<%end%>
+</div>

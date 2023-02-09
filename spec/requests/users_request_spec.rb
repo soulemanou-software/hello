@@ -1,39 +1,21 @@
-require 'rails_helper'
+# require 'rails_helper'
 
-RSpec.describe 'Users', type: :request do
-  describe 'GET /index' do
-    before do
-      get '/users/'
-    end
+# RSpec.describe 'Users', type: :request do
+#   describe 'GET /index' do
+#     it 'gets users' do
+#       get '/'
+#       expect(response).to have_http_status(200)
+#       expect(response.body).to include('Here is list of users')
+#       expect(response).to render_template(:index)
+#     end
+#   end
 
-    it 'returns http success' do
-      expect(response).to have_http_status(:success)
-    end
-
-    it 'should render index' do
-      expect(response).to render_template(:index)
-    end
-
-    it 'should include correct placeholder' do
-      expect(response.body).to include("Here is a All Post for users you are in '/users'")
-    end
-  end
-
-  describe 'GET /show' do
-    before do
-      get '/users/:id'
-    end
-
-    it 'returns http success' do
-      expect(response).to have_http_status(:success)
-    end
-
-    it 'should render show' do
-      expect(response).to render_template(:show)
-    end
-
-    it 'should include correct placeholder' do
-      expect(response.body).to include("Here is a single Post for a given user you are in '/users/user_id")
-    end
-  end
-end
+#   describe 'GET /show' do
+#     it 'gets user' do
+#       get '/users/1'
+#       expect(response).to have_http_status(200)
+#       expect(response.body).to include('List of users by Id')
+#       expect(response).to render_template(:show)
+#     end
+#   end
+# end

@@ -1,14 +1,38 @@
-<div class="border border-dark">
-  <div class="show-post">
-    <p class="user-name fs-3">Post by: <%=@post.author.name%></p>
-    <p class="comments-likes">Comments: <%=@post.comment_counter%>, Likes: <%=@post.likes_counter%></p>
-  </div>
-  <p class="fs-4 p-3"><%=@post.text%></p>
+<h1>Post</h1>
+
+<div class = "row pl-3 border border-2 border-dark bg-secondary">
+<div class = "col-md-4">
+<p>Post#:&nbsp<%=@post.id%>&nbspBy: <%=@user.name%></p>
 </div>
-<% @post.comments.each do |comment| %>
-  <%= render 'comment', comment: comment %>
-<% end %>
-<div class="like-btn text-center">
-  <%=render 'likes/new' %>
-  <button class="btn container btn-outline-dark"><%= link_to 'Add a comment', new_user_post_comment_path(@user.id,@post.id) ,class: "text-decoration-none fs-5 text-dark "  %></button>
+<div class = "col-md-4">
 </div>
+<div class = "col-md-4">
+<p>Comment:<%=@post.comments_counter%> &nbsp Likes_counter: &nbsp<%=@post.likes_counter%> </p>
+</div>
+<div>
+<p>Title: <%=@post.text%></p>
+</div>
+</div>
+
+<%= form_with url: "/users/#{@post.author.id}/posts/#{@post.id}/likes" ,class: "col-6" do |form|%>
+ <%= form.submit "like", class: "col-3 my-3"%>
+  <% end %> 
+  
+  <% if can? :destroy, @post %>
+     <%= link_to "Delete",user_post_path(id: @post.id), class:"btn btn-outline-danger", "data-turbo-method": :delete %>
+  <% end %>
+  
+
+<div class = "row border border-2 border-dark">
+<p>
+ <% @comments.includes(:author).each do |comment| %>
+              <p class="card-text"><%= comment.author.name %>: <%= comment.text %></p>
+              
+              <% if can? :destroy, comment %>
+                      <%= link_to "Delete",user_post_comment_path(user_id:@user.id ,post_id:@post.id, id: comment.id), class:"btn btn-outline-danger", "data-turbo-method": :delete %>            <% end %>
+              <% end %>
+</p>
+
+  <%= link_to "Add New Comment", new_user_post_comment_path(user_id: @user.id, post_id: @post.id), class:"btn btn-primary w-25" %>
+</div>
+
