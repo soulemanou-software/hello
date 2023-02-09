@@ -141,9 +141,15 @@ You can deploy this project using:
 
 👤 **Author1**
 
-- GitHub: [@kessio](https://github.com/kessio)
-- Twitter: [@kessio_sharon](https://twitter.com/kessio_sharon)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/sharon-kessio-172220b5)
+- GitHub: [@soulemanou-software](https://github.com/soulemanou)
+- Twitter: [@soulemanou-software](https://twitter.com/soulemanou-software)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/soulemanou-software)
+
+**Emem Ekpo**
+
+- GitHub: [@ecekpo](https://https://github.com/ecekpo)
+- Twitter: [@ememcookey](https://twitter.com/ememcookey)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/emem-ekpo)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

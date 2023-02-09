@@ -1,5 +1,4 @@
-# rubocop:disable all
-require "test_helper"
+require 'test_helper'
 
 class PostTest < ActiveSupport::TestCase
   # test "the truth" do

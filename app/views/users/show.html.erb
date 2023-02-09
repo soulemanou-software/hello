@@ -1,23 +1,14 @@
-<div>
-<div class="user-container">
-    <%= image_tag @user.photo, :class => "photo", alt: "user profile" %>
-    <div class="user-info">
-      <h1><%= @user.name%></h1>
-      <h4>Number of posts: <%= @user.posts_counter%></h4>
-    </div>
-    </div>
-    <div class="bio">
-    <h4>Bio</h4>
-    <p><%= @user.bio%></p>
-  </div>
-
-  <% @user.recent_posts.each do |post| %>
-      <div class="post">
-         <h4>Post #<%= post.id%></h4>
-        <h3><%=link_to post.title, user_post_path(@user.id, post.id), :class => 'link'%></h3>
-        <p><%= post.text %></p>
-      <p class="likes-comments">Comments: <%= post.comments_counter%> Likes: <%= post.likes_counter%></p>
-      </div>
-    <%end%>
-      <button><%=link_to 'See all posts', user_posts_path(@user), :class => 'link'%></button>
-</div>
+<section>
+   <%= render "user", users:@user%>
+   <div class="bio-container margin">
+     <h3 class="bio">Bio</h3>
+     <p class="fs-4"><%= @user.bio%></p>
+   </div>
+   <%@user.three_recent_posts.each_with_index do |pt,index|%>
+      <%= render 'posts/post', post:pt, index:index %>
+   <%end%>
+   <div class="text-center">
+     <button class="btn btn-outline-dark mt-2"><%= link_to 'See All Posts', user_posts_path(@user), class: "text-decoration-none text-dark fs-4 text-center" %>
+     </button>
+   </div>
+</section>

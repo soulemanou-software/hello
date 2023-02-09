@@ -1,12 +1,17 @@
 class User < ApplicationRecord
-  has_many :posts, class_name: 'Post', foreign_key: :author_id
-  has_many :comments, class_name: 'Comment', foreign_key: :author_id
-  has_many :likes, class_name: 'Like', foreign_key: :author_id
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable, :confirmable, :lockable
+  has_many :likes, foreign_key: 'author_id'
+  has_many :comments, foreign_key: 'author_id'
+  has_many :posts, foreign_key: 'author_id'
 
-  validates :name, presence: true
-  validates :posts_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
+  validates :name, presence: true, allow_blank: false
+  validates_numericality_of :posts_counter, only_integer: true, presence: true, greater_than_or_equal_to: 0,
+                                            allow_nil: true
 
-  def recent_posts
-    posts.order(created_at: :desc).includes(:author).limit(3)
+  def three_recent_posts
+    posts.where(author_id: id).last(3)
   end
 end
